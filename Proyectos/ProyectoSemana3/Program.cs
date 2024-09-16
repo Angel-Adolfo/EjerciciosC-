@@ -26,6 +26,26 @@ namespace ProyectoSemana3
                 Console.WriteLine($"{alumno.Nombre} {alumno.Apellido} {alumno.Identificacion} {alumno.Carrera} {alumno.Promedio():0.00}");
             }
 
+            Console.WriteLine(" ");
+            Console.WriteLine("Alumnos con promedio mayor o igual a 6:");
+            Console.WriteLine(" ");
+            foreach (var alumno in alumnos)
+            {
+                if (alumno.Promedio() >= 6)
+                {
+                    Console.WriteLine($"{alumno.Nombre} {alumno.Apellido}, ID: {alumno.Identificacion}");
+                }
+            }
+
+            double promedioGeneral = 0;
+            foreach (var alumno in alumnos)
+            {
+                promedioGeneral += alumno.Promedio();
+            }
+            promedioGeneral /= alumnos.Length;
+            Console.WriteLine(" ");
+            Console.WriteLine($"Promedio general de la clase es: {promedioGeneral:0.00}");
+
             Console.ReadKey();
         }
     }
