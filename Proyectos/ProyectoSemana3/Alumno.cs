@@ -23,5 +23,16 @@ namespace ProyectoSemana3
             Carrera = carrera;
             Notas = notas;
         }
+
+        public double Promedio()
+        {
+            double suma = 0;
+            for (int i = 0; i < Notas.Length; i++)
+            {
+                suma += Notas[i];
+            }
+            return suma / Notas.Length;
+        }
+
     }
 }
