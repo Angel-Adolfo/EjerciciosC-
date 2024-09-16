@@ -17,7 +17,8 @@ namespace ProyectoSemana2
                 Console.WriteLine("Ingresa una frase (se verificara si es pálindromo o no)");
                 string frase = Console.ReadLine();
 
-                string palindromo = frase.Replace(" ", "").ToLower();
+                //string palindromo = frase.Replace(" ", "").ToLower();
+                string palindromo = new string(frase.Where(c => char.IsLetterOrDigit(c)).ToArray()).ToLower();
 
                 char[] charArray = palindromo.ToCharArray();
                 Array.Reverse(charArray);
@@ -32,13 +33,13 @@ namespace ProyectoSemana2
                     Console.WriteLine("Esta frase no es un pálindromo");
                 }
 
-                Console.WriteLine("Quieres ingresar otra frase?");
-                respuesta = Console.ReadLine().ToLower();
+                Console.WriteLine("Quieres ingresar otra frase? (si/no)");
+                respuesta = Console.ReadLine().Trim().ToLower();
 
             } while (respuesta == "si");
 
             Console.WriteLine("Programa finalizado");
-            Console.Read();
+            Console.ReadKey();
             
         }
     }
