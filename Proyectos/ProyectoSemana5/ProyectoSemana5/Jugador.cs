@@ -21,11 +21,10 @@ namespace ProyectoSemana5
         {
             try
             {
-                // Serializa el jugador y guarda en el archivo
                 using (FileStream fs = new FileStream(rutaArchivo, FileMode.Create))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(fs, this); // this hace referencia a la instancia actual del jugador
+                    formatter.Serialize(fs, this);
                 }
                 Console.WriteLine("Progreso guardado con éxito.");
             }
